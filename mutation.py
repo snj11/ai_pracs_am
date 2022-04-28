@@ -16,6 +16,6 @@ for i in range(len(gene)):
         if gene[i] == "1":
             gene = gene[:i] + "0" + gene[i+1:]
         else:
-            gene = gene[:i] + "0" + gene[i+1:]
+            gene = gene[:i] + "1" + gene[i+1:]
 print("New gene : ", gene)
 
