@@ -1,20 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
 def ret_value(k, var1, var = None):
     for key, value in var1.items():
         if var == None and key==k:
             return value
         if var == 'val' and value==k:
           return key
-
-
-# In[8]:
-
-
+    
 graph = {
     'A' : ['B', 'C',  'D'],#1
     'C' : ['E', 'F'],#2
@@ -38,10 +28,6 @@ graph = {
     'F' : ['G', 'M'],#20
     'M' : ['J', 'I'],#21
 }
-
-
-# In[10]:
-
 
 max_depth = int(input("\nEnter the maximum travesal depth : "))
 start_node = input("Enter start node: ")
