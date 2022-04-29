@@ -1,9 +1,8 @@
 import random
 gene = input("Enter genes in binary representation: ")
 mutation_prob = float(input("Enter mutation probability: "))
-n = len(gene)
 str = ""
-for i in range(n):
+for i in range(len(gene)):
     random_prob = random.random()
     if random_prob > mutation_prob:
         str+="1"
