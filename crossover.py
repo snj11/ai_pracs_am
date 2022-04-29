@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[30]:
-
-
 import random
 gen1 = input("Enter 1st genes: ")#1100110110110011
 gen2 = input("Enter 2nd genes: ")#1000110011011111
@@ -21,10 +15,3 @@ for j in range(2):
         else:
             final.append(gen2[points[i]:points[i+1]])
     print("".join(final))
-
-
-# In[ ]:
-
-
-
-
