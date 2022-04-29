@@ -1,84 +1,52 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-#Describe your graph here  
-graph = {}
-
-print("""INPUT INSTRUCTIONS
-1. Enter the graph as parent node and its children separated by spaces 
-(the first letter will be considered as the parent followed by the class("None" in case of a leaf node)):
-2. Enter the dist of each child node with the parent node separated by spaces: \n""")
-while True:
-    seq = input().split()
+graph={
+    'A' : [('B',37), ('C',10),  ('D', 30)],#1
+    'C' : [('E', 35), ('F', 25)],#2
+    'G': [('H', 29), ('J', 33), ('I', 11)],#3
+    'K' : [None],#4
+    'I' : [('K', 60)],#5
+    'B' : [('D', 7)],#6
+    'D' : [('L', 15)],#7
+    'L' : [('A', 10), ('M', 39)],#8
+    'O' : [('N', 47)],#9
+    'N' : [('T', 50), ('H', 55), ('Q', 35)],#10
+    'H' : [('E', 40)],#11
+    'P' : [('O', 20)],#12
+    'Q' : [('H', 31)],#13
+    'R' : [('Q', 27)],#14
+    'S' : [('R', 39)],#15
+    'J' : [('S', 70)],#16
+    'U' : [('A', 50), ('N', 20), ('H', 19)],#17
+    'T' : [('A', 40), ('B', 15)],#18
+    'E' : [('U', 21), ('G', 32)],#19
+    'F' : [('G', 60), ('M', 17)],#20
+    'M' : [('J', 15), ('I', 16)],#21
+}
+start = input("Enter the start node : ")
+def ret_value(k, var1):
+    for key, value in var1.items():
+        if key==k:
+            return value
     
-    if seq == ['-1']:
-        break
-        
-    dist = list(map(int, input(("Distance of " + f'{seq[1:]}' + " from " + f'{seq[0]}' + ": ")).split()))
-    
-    if len(seq[1:]) == len(dist):
-            edge = [[seq[x+1], dist[x]] for x in range(len(dist))]    
-    else:
-        print("Invalid Input!")
-        break
-        
-    graph[seq[0]] = edge
-
-
-# In[ ]:
-
-
-start = 'S'
-Closed = list()
-
-def MOVEGEN(N):
-    new_list = list()
-    if N in graph.keys():
-        new_list = graph[N]
-    return new_list
-
-def SORT(L):
-    L.sort(key = lambda x: x[1])
-    return L
-
-def heu(Node):
-    return Node[1]
-
-def APPEND(L1,L2):
-    new_list = list(L1) + list(L2)
-    return new_list
 
 def Hill_Climbing(start):
-    global closed
-    N = start
-    child = MOVEGEN(N)
-    SORT(child)
-    N = [start,100]
-    print("\nStart: ",N)
+    closed = [start]
+    child = ret_value(start, graph)
+    child.sort(key = lambda x: x[1])
+    var = int(input(f"Enter the hierustic for {start} node : "))
+    print("\nStart: ",start)
     print("Edges: ",child)
     newnode = child[0]
-    closed = [N]
+    closed = [start,var]
+    N = [start,var]
 
-    while heu(newnode)<=heu(N):
+    while newnode[1]<=N[1]:
         print('\n------------------')
         N=newnode
         print('Next visited node = ',N)
-        closed = APPEND(closed,[N])
-        child = MOVEGEN(N[0])
-        SORT(child)
+        closed += [N]
+        child = ret_value(N[0], graph)
+        child.sort(key = lambda x: x[1])
         print("Edges = ", child)
         newnode = child[0]
-    Closed = closed
-    
 
 Hill_Climbing(start)
-
-
-# In[ ]:
-
-
-
-
