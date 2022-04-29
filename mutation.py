@@ -1,5 +1,4 @@
 import random
-
 gene = input("Enter genes in binary representation: ")
 mutation_prob = float(input("Enter mutation probability: "))
 n = len(gene)
@@ -18,4 +17,3 @@ for i in range(len(gene)):
         else:
             gene = gene[:i] + "1" + gene[i+1:]
 print("New gene : ", gene)
-
