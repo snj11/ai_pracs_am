@@ -58,14 +58,6 @@ def get_neighbors(v):
     else:
         return None
 
-def ret_value(k, var1, var = None):
-    for key, value in var1.items():
-        if var == None and key==k:
-            return value
-        if var == 'val' and value==k:
-          return key
-
-
 Graph_nodes={
     'A' : [('B',37), ('C',10),  ('D', 30)],#1
     'C' : [('E', 35), ('F', 25)],#2
