@@ -48,3 +48,16 @@ def bfs(graph, start_node, end_node):
 start_node = 'A'
 end_node = 'N'
 bfs(graph, start_node, end_node)
+
+'''BFS (G, s)
+let Q be queue.
+Q.enqueue( s )
+ 
+mark s as visited
+while ( Q is not empty)
+v = Q.dequeue( )
+ 
+for all neighbors w of v in Graph G
+if w is not visited
+Q.enqueue( w )
+mark w as visited'''
