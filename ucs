@@ -1,0 +1,50 @@
+def UCS(src,target):
+    queue=set([src])
+    path=[]
+    g={}
+    
+    g[src]=0
+    
+    while len(queue)>0:
+        n=-1
+        
+        for v in queue:
+            if n==-1 or g[n]>g[v]:
+                n=v
+        
+        if n==target or n not in graph:
+            pass
+        else:
+            for i in graph[n]:
+                w=i[1]
+                if i[0] not in queue:
+                    queue.add(i[0])
+                    g[i[0]]=g[n]+w
+                else:
+                    if g[i[0]]>g[n]+w:
+                        g[i[0]]=g[n]+w
+                
+        if n==target:
+            path.append(target)
+            print("Path Exists!!!\n", list(dict.fromkeys(path)))
+            print("\nCost: ",g[target])
+            return
+        queue.remove(n)
+        path.append(n)
+    
+    print("\nPath does NOT Exists!!!")
+
+graph={
+    'S' : [('A', 5), ('B', 9), ('D', 6)],
+    'A' : [('B', 3), ('G', 9)],
+    'B' : [('A', 5), ('C', 1)],
+    'C' : [('G', 5), ('S', 6), ('F', 7)],
+    'E' : [('G', 7)],
+    'D' : [('S', 1), ('E', 2), ('C', 2)],
+    'F' : [('G', 8), ('D', 2)]
+}
+
+src="S"
+target="G"
+
+UCS(src,target)
