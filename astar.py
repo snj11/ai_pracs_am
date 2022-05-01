@@ -123,3 +123,24 @@ for i in range(len(path)-1):
         cost += j[1]
 print("Path = ", path)
 print('Cost = ', cost)
+
+'''let openList equal empty list of nodes
+let closedList equal empty list of nodes
+put startNode on the openList (leave it's f at zero)
+while openList is not empty
+    let currentNode equal the node with the least f value
+    remove currentNode from the openList
+    add currentNode to the closedList
+    if currentNode is the goal
+        You've found the exit!
+    let children of the currentNode equal the adjacent nodes
+    for each child in the children
+        if child is in the closedList
+            continue to beginning of for loop
+        child.g = currentNode.g + distance b/w child and current
+        child.h = distance from child to end
+        child.f = child.g + child.h
+        if child.position is in the openList's nodes positions
+            if child.g is higher than the openList node's g
+                continue to beginning of for loop
+        add the child to the openList'''
