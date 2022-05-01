@@ -50,3 +50,12 @@ def Hill_Climbing(start):
         newnode = child[0]
 
 Hill_Climbing(start)
+
+'''close list having startnode already in it
+append child node of the start node in childlist and sort it on there resp hierustic value
+store the lowest value element in newnode
+while newnode hierustic value < last element of close list hierustic value:
+    add newnode to the close list
+    append child node of the last node of close list in childlist and sort it on there resp hierustic value
+    store the lowest value element in newnode
+print close as path'''
