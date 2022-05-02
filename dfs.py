@@ -68,4 +68,12 @@ dfs(graph, start_node, end_node)
                 if w is not visited :   
                      stack.push( w )         
                      mark w as visited
-      return false'''
+      return false
+      
+Completeness : Complete, if m is finite.
+ Optimality : No, as it cannot guarantee the shallowest solution.
+ Time Complexity : A depth first search, may generate all of the O(bm) nodes in the search tree, where m is the
+maximum depth of any node; this can be much greater than the size of the state space.
+ Space Complexity : For a search tree with branching factor b and maximum depth m, depth first search requires
+storage of only O(bm
+) nodes, as at a time only the branch, which is getting explored, will reside in memory'''
