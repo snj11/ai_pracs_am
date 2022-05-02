@@ -45,3 +45,11 @@ def greedy(closed, opened, start, end):
         print("Path = ", closed)
     return closed
 closed = greedy(closed, opened, start, end)
+
+'''1. Completeness : It’s not complete as, it can get stuck in loops, also is susceptible to wrong start and quality of heuristic
+function.
+2. Optimality : It’s not optimal; as it goes on selecting a single path and never checks for other possibilities.
+3. Time Complexity : O(bm
+), but a good heuristic can give dramatic improvement.
+4. Space Complexity : O(bm
+) , It needs to keep all nodes in memory'''
