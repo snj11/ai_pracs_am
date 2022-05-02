@@ -60,4 +60,11 @@ v = Q.dequeue( )
 for all neighbors w of v in Graph G
 if w is not visited
 Q.enqueue( w )
-mark w as visited'''
+mark w as visited
+
+
+Completeness : It is complete, provided the shallowest goal node is at some finite depth.
+ Optimality : It is optimal, as it always finds the shallowest solution.
+ Time complexity : O(bd
+), number of nodes in the fringe.
+ Space complexity : O(bd), total number of nodes explored.'''
