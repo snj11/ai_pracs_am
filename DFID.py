@@ -74,4 +74,20 @@ while (not found)
 found = DLS(root, limit, 0); 
 limit = limit + 1; 
  } 
-}'''
+}
+
+ Completeness : DFID is complete when the branching factor b is finite.
+ Optimality : It is optimal when the path cost is a non-decreasing function of the depth of the node.
+ Time complexity :
+o Do you think in DFID there is a lot of wastage of time and memory in regenerating the same set of nodes again
+and again ?
+o It may appear to be waste of memory and time, but it’s not so. The reason is that, in a search tree with almost
+same branching factor at each level, most of the nodes are in the bottom level which are explores very few times
+as compared to those on upper level.
+o The nodes on the bottom level that is level ‘d’ are generated only once, those on the next to bottom level are
+generated twice, and so on, up to the children of the root, which are generated d times. Hence the time
+complexity is O(bd
+).
+ Space complexity : Memory requirements of DFID are modest, i.e. O(bd
+)
+'''
