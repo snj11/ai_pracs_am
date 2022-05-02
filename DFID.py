@@ -64,3 +64,14 @@ if not iterativeDDFS(start_node, destn_node, graph, max_depth):
     print("\nPath unavailable!")
 else:
     print("\nA path exists!")
+'''
+DFID() 
+{ 
+limit = 0; 
+found = false; 
+while (not found) 
+ { 
+found = DLS(root, limit, 0); 
+limit = limit + 1; 
+ } 
+}'''
