@@ -143,4 +143,9 @@ while openList is not empty
         if child.position is in the openList's nodes positions
             if child.g is higher than the openList node's g
                 continue to beginning of for loop
-        add the child to the openList'''
+        add the child to the openList
+  
+ 1. Completeness : It is complete, as it will always find solution if one exist.
+2. Optimality : Yes, it is Optimal.
+3. Time Complexity : O(bm), as the number of nodes grows exponentially with solution cost.
+4. Space Complexity : O(bm),as it keeps all nodes in memory.'''
