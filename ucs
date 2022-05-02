@@ -48,3 +48,11 @@ src="S"
 target="G"
 
 UCS(src,target)
+
+
+ Completeness : Completeness is guaranteed provided the cost of every step exceeds some small positive constant.
+ Optimality : It produces optimal solution as nodes are expanded in order of their path cost.
+ Time complexity : Uniform-cost search considers path costs rather than depths; so its complexity is does not merely
+depends on b and d. Hence we consider C* be the cost of the optimal solution, and assume that every action costs at
+least €. Then the algorithm's worst-case time and space complexity is O(b C*/ € ), which can be much greater than bd.
+ Space complexity : O(b C*/ €), indicating number of node in memory at execution time.
