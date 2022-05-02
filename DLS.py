@@ -46,4 +46,12 @@ if (DLS(child, limit, depth + 1))
  return success; 
  } 
  return failure; 
-} '''
+}
+
+ Completeness : Its incomplete if shallowest goal is beyond the depth limit.
+ Optimality : Non optimal, as the depth chosen can be greater than d.
+ Time complexity : Same as DFS, O (bl
+), where l is the specified depth limit.
+ Space complexity : Same as DFS, O(bl
+), where l is the specified depth limit
+'''
